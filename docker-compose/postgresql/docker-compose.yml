@@ -8,5 +8,5 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER= #用户名
-      - POSTGRES_PASSWORD= #密码
+      - POSTGRES_USER= # 用户名
+      - POSTGRES_PASSWORD= # 密码
