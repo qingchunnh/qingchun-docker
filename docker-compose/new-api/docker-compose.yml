@@ -9,8 +9,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./new-api/data:/data
-      - ./new-api/logs:/app/logs
+      - ./data:/data
+      - ./logs:/app/logs
     environment:
       - TZ=Asia/Shanghai
       # - 'SQL_DSN=postgresql://user:password@host:port/dbname' #数据库地址,如果是docker部署的数据库,地址应该为容器地址
