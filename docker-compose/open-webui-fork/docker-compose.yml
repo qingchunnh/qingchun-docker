@@ -1,0 +1,28 @@
+services:
+  open-webui-fork:
+    image: ghcr.io/ovinc-cn/openwebui:v0.6.40.1
+    container_name: open-webui-fork
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui-fork:/app/backend/data
+    environment:
+      - 'TZ=Asia/Shanghai'
+      - 'WEBUI_SECRET_KEY=t0p-s3cr3t' #随机字符串
+      - 'ENABLE_VERSION_UPDATE_CHECK=false'
+      - 'RAG_EMBEDDING_ENGINE=openai'
+      - 'AUDIO_STT_ENGINE=openai'
+      - 'ENABLE_ADMIN_CHAT_ACCESS=True'
+      - 'LICENSE_KEY=enterprise'
+      - 'ORGANIZATION_NAME=青春AI'
+      - 'CUSTOM_NAME=青春AI'
+      - 'AIOHTTP_CLIENT_READ_BUFFER_SIZE=65536'
+      # - 'DATABASE_URL=postgresql://user:password@host:port/dbname' #数据库地址,如果是docker部署的数据库,地址应该为容器地址
+      # - 'REDIS_URL=redis://:<password>@<host>:6379/0' #Redis地址
+      # - 'WEBSOCKET_REDIS_URL=redis://:<password>@<host>:6379/0' #Redis地址
+      # - 'ENABLE_WEBSOCKET_SUPPORT=True' #启用WS
+      # - 'WEBSOCKET_MANAGER=redis' #指定WS管理器
+
+volumes:
+  open-webui-fork:
