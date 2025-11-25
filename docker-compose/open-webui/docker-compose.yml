@@ -1,0 +1,24 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui:/app/backend/data
+    environment:
+      - 'TZ=Asia/Shanghai'
+      - 'WEBUI_SECRET_KEY=t0p-s3cr3t' #随机字符串
+      - 'ENABLE_VERSION_UPDATE_CHECK=false'
+      - 'RAG_EMBEDDING_ENGINE=openai'
+      - 'AUDIO_STT_ENGINE=openai'
+      - 'ENABLE_ADMIN_CHAT_ACCESS=True'
+      # - 'DATABASE_URL=postgresql://user:password@host:port/dbname' #数据库地址,如果是docker部署的数据库,地址应该为容器地址
+      # - 'REDIS_URL=redis://:<password>@<host>:6379/0' #Redis地址
+      # - 'WEBSOCKET_REDIS_URL=redis://:<password>@<host>:6379/0' #Redis地址
+      # - 'ENABLE_WEBSOCKET_SUPPORT=True' #启用WS
+      # - 'WEBSOCKET_MANAGER=redis' #指定WS管理器
+
+volumes:
+  open-webui:
