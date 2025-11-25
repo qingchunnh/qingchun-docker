@@ -18,7 +18,7 @@ services:
       - GITEA__database__USER=user #数据库用户名
       - GITEA__database__PASSWD=password #数据库密码
     volumes:
-      - ./data:/data
+      - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
