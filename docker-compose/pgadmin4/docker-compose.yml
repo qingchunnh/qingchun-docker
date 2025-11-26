@@ -4,8 +4,8 @@ services:
     container_name: pgadmin4
     restart: unless-stopped
     environment:
-      - PGADMIN_DEFAULT_EMAIL: user@domain.com # 邮箱
-      - PGADMIN_DEFAULT_PASSWORD: password # 密码
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com # 邮箱
+      - PGADMIN_DEFAULT_PASSWORD=password # 密码
       - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
       - PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=10
     ports:
