@@ -1,0 +1,28 @@
+version: "3"
+
+networks:
+  forgejo:
+    external: false
+
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:13.0.3
+    container_name: forgejo
+    restart: unless-stopped
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - FORGEJO__database__DB_TYPE=postgres # 数据库类型
+      - FORGEJO__database__HOST=host:port # 数据库地址
+      - FORGEJO__database__NAME=forgejo #数据库名称
+      - FORGEJO__database__USER=user #数据库用户名
+      - FORGEJO__database__PASSWD=password #数据库密码
+    volumes:
+      - ./forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000"
+      - "222:22"
+    networks:
+      - forgejo
