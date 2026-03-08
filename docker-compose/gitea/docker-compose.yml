@@ -1,9 +1,5 @@
 version: "3"
 
-networks:
-  gitea:
-    external: false
-
 services:
   gitea:
     image: gitea:latest
@@ -26,4 +22,8 @@ services:
       - "3000:3000"
       - "222:22"
     networks:
-      - gitea
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true

@@ -1,9 +1,5 @@
 version: "3"
 
-networks:
-  forgejo:
-    external: false
-
 services:
   forgejo:
     image: codeberg.org/forgejo/forgejo:13.0.3
@@ -26,4 +22,8 @@ services:
       - "3000:3000"
       - "222:22"
     networks:
-      - forgejo
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true
