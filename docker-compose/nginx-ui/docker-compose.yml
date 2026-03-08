@@ -5,6 +5,7 @@ services:
     tty: true
     container_name: nginx-ui
     restart: always
+    network_mode: host
     environment:
       - TZ=Asia/Shanghai
     volumes:
@@ -15,9 +16,4 @@ services:
     ports:
       - 80:80
       - 443:443
-    networks:
-      - qingchun-network
 
-networks:
-  qingchun-network:
-    external: true
