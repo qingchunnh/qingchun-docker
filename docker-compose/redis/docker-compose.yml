@@ -12,3 +12,9 @@ services:
       - ./conf/redis.conf:/etc/redis/redis.conf
       - ./logs:/logs
     command: redis-server /etc/redis/redis.conf
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true

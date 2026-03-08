@@ -13,3 +13,9 @@ services:
       - 5050:80
     volumes:
       - ./data:/var/lib/pgadmin
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true

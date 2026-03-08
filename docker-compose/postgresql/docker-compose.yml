@@ -11,3 +11,9 @@ services:
       - TZ=Asia/Shanghai
       - POSTGRES_USER=user # 用户名
       - POSTGRES_PASSWORD=password # 密码
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true

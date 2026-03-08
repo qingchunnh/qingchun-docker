@@ -19,6 +19,12 @@ services:
       # - 'WEBSOCKET_REDIS_URL=redis://:<password>@<host>:6379/0' #Redis地址
       # - 'ENABLE_WEBSOCKET_SUPPORT=True' #启用WS
       # - 'WEBSOCKET_MANAGER=redis' #指定WS管理器
+    networks:
+      - qingchun-network
 
 volumes:
   open-webui:
+
+networks:
+  qingchun-network:
+    external: true
