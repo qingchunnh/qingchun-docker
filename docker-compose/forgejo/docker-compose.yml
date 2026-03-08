@@ -15,7 +15,7 @@ services:
       - FORGEJO__database__USER=user #数据库用户名
       - FORGEJO__database__PASSWD=password #数据库密码
     volumes:
-      - ./forgejo:/data
+      - ./data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:

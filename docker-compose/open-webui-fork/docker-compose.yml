@@ -1,12 +1,12 @@
 services:
   open-webui-fork:
-    image: ghcr.io/ovinc-cn/openwebui:v0.8.7.1-slim
+    image: ghcr.io/ovinc-cn/openwebui:v0.8.8.1-slim
     container_name: open-webui-fork
     restart: unless-stopped
     ports:
       - "3000:8080"
     volumes:
-      - open-webui-fork:/app/backend/data
+      - ./data:/app/backend/data
     environment:
       - 'TZ=Asia/Shanghai'
       - 'WEBUI_SECRET_KEY=t0p-s3cr3t' #随机字符串
@@ -25,9 +25,6 @@ services:
       # - 'WEBSOCKET_MANAGER=redis' #指定WS管理器
     networks:
       - qingchun-network
-
-volumes:
-  open-webui-fork:
 
 networks:
   qingchun-network:
