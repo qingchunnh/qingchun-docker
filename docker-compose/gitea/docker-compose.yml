@@ -10,6 +10,7 @@ services:
     container_name: gitea
     restart: unless-stopped
     environment:
+      - TZ=Asia/Shanghai
       - USER_UID=1000
       - USER_GID=1000
       - GITEA__database__DB_TYPE=postgres # 数据库类型

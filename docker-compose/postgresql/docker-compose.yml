@@ -8,5 +8,6 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     environment:
+      - TZ=Asia/Shanghai
       - POSTGRES_USER=user # 用户名
       - POSTGRES_PASSWORD=password # 密码
