@@ -1,6 +1,6 @@
 services:
   open-webui-fork:
-    image: ghcr.io/ovinc-cn/openwebui:v0.8.9.1-slim
+    image: ghcr.io/ovinc-cn/openwebui:v0.8.10.1-slim
     container_name: open-webui-fork
     restart: unless-stopped
     ports:
