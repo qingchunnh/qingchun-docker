@@ -8,14 +8,14 @@ services:
       - 6888:6888
       - 6888:6888/udp
     environment:
-      - CR_CONF_Database.Type=postgres #数据库类型
-      - CR_CONF_Database.Host=postgres #数据库地址
-      - CR_CONF_Database.Name=cloudreve #数据库名
-      - CR_CONF_Database.User=cloudreve #数据库用户
-      - CR_CONF_Database.Password=Password #数据库密码
-      - CR_CONF_Database.Port=5432 #数据库端口
-      - CR_CONF_Redis.Server=redis:6379 #Redis地址
-      # - CR_CONF_Redis.Password=${PANEL_REDIS_ROOT_PASSWORD} #Redis密码
+      - CR_CONF_Database.Type=postgres # 数据库类型
+      - CR_CONF_Database.Host=postgres # 数据库地址
+      - CR_CONF_Database.Name=cloudreve # 数据库名
+      - CR_CONF_Database.User=cloudreve # 数据库用户
+      - CR_CONF_Database.Password=password # 数据库密码
+      - CR_CONF_Database.Port=5432 # 数据库端口
+      - CR_CONF_Redis.Server=redis:6379 # Redis地址
+      # - CR_CONF_Redis.Password=password # Redis密码
     volumes:
       - ./data:/cloudreve/data
     networks:
