@@ -1,14 +1,14 @@
 # qingchun-docker
-My Docker Compose file
+我的 Docker Compose 文件
 
-## Contents
-**Web Server**
+## 目录
+**Web 服务器**
 - [nginx-ui](./docker-compose/nginx-ui/)
 
-**Monitoring**
+**监控**
 - [beszel](./docker-compose/beszel/)
 
-**Database**
+**数据库**
 - [pgadmin4](./docker-compose/pgadmin4/)
 - [postgresql](./docker-compose/postgresql/)
 - [redis](./docker-compose/redis/)
@@ -17,7 +17,7 @@ My Docker Compose file
 - [gitea](./docker-compose/gitea/)
 - [forgejo](./docker-compose/forgejo/)
 
-**Storage**
+**存储**
 - [openlist](./docker-compose/openlist/)
 - [cloudreve](./docker-compose/cloudreve/)
 
