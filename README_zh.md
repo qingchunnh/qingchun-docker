@@ -7,6 +7,7 @@
 
 **监控**
 - [beszel](./docker-compose/beszel/)
+- [uptime-kuma](./docker-compose/uptime-kuma/)
 
 **数据库**
 - [pgadmin4](./docker-compose/pgadmin4/)

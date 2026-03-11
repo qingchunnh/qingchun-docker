@@ -7,6 +7,7 @@ My Docker Compose file
 
 **Monitoring**
 - [beszel](./docker-compose/beszel/)
+- [uptime-kuma](./docker-compose/uptime-kuma/)
 
 **Database**
 - [pgadmin4](./docker-compose/pgadmin4/)
