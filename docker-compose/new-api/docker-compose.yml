@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   new-api:
-    image: ghcr.io/qingchunnh/new-api:v0.11.6
+    image: ghcr.io/qingchunnh/new-api:v0.12.6
     container_name: new-api
     restart: unless-stopped
     command: --log-dir /app/logs
