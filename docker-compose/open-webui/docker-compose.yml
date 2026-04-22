@@ -9,8 +9,9 @@ services:
       - ./data:/app/backend/data
     environment:
       - 'TZ=Asia/Shanghai'
-      - 'WEBUI_SECRET_KEY=3eC8IA16f2XYUnNH5NiAjlTk59aLYm80' # 随机字符串
+      - 'WEBUI_SECRET_KEY=OiHkMuQBq0TTia0I82NPT821HUQgeFYI6DKh2MXMUg0JqiFfj7dmp2ebYPNVvV1k' # 随机字符串
       - 'ENABLE_VERSION_UPDATE_CHECK=false'
+      - 'HF_HUB_OFFLINE=1'
       - 'RAG_EMBEDDING_ENGINE=openai'
       - 'AUDIO_STT_ENGINE=openai'
       - 'ENABLE_ADMIN_CHAT_ACCESS=True'
