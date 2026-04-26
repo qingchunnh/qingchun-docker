@@ -1,4 +1,6 @@
 # qingchun-docker
+English | [中文](README_zh.md)  
+
 My Docker Compose file
 
 ## Contents

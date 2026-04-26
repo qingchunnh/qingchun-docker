@@ -1,4 +1,6 @@
 # qingchun-docker
+[English](./README.md) | 中文  
+
 我的 Docker Compose 文件
 
 ## 目录
