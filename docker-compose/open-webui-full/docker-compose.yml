@@ -1,0 +1,65 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./open-webui/data:/app/backend/data
+    environment:
+      - 'TZ=Asia/Shanghai'
+      - 'WEBUI_SECRET_KEY=OiHkMuQBq0TTia0I82NPT821HUQgeFYI6DKh2MXMUg0JqiFfj7dmp2ebYPNVvV1k' # 随机字符串
+      - 'ENABLE_VERSION_UPDATE_CHECK=false'
+      - 'HF_HUB_OFFLINE=1'
+      - 'RAG_EMBEDDING_ENGINE=openai'
+      - 'AUDIO_STT_ENGINE=openai'
+      - 'ENABLE_ADMIN_CHAT_ACCESS=True'
+      - 'CHAT_STREAM_RESPONSE_CHUNK_MAX_BUFFER_SIZE=16777216'
+      - 'ENABLE_CHAT_RESPONSE_BASE64_IMAGE_URL_CONVERSION=True'
+      - 'DATABASE_URL=postgresql://user:password@postgres:5432/openwebui' # 数据库
+      - 'REDIS_URL=redis://redis:6379/0'
+      - 'WEBSOCKET_REDIS_URL=redis://redis:6379/0'
+      - 'ENABLE_WEBSOCKET_SUPPORT=True'
+      - 'WEBSOCKET_MANAGER=redis'
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - openwebui
+
+  postgres:
+    image: postgres:18.3
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql
+    environment:
+      - TZ=Asia/Shanghai
+      - POSTGRES_USER=user # 用户名
+      - POSTGRES_PASSWORD=password # 密码
+      - POSTGRES_DB=openwebui
+    networks:
+      - openwebui
+
+  redis:
+    image: redis:8.6.2
+    container_name: redis
+    restart: always
+    command: redis-server /etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./redis/data:/data
+      - ./redis/conf/redis.conf:/etc/redis/redis.conf
+      - ./redis/logs:/logs
+    networks:
+      - openwebui
+
+networks:
+  openwebui:
+    external: true
