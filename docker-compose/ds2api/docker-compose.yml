@@ -1,0 +1,21 @@
+services:
+  ds2api:
+    image: ghcr.io/cjackhwang/ds2api:latest
+    container_name: ds2api
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${DS2API_HOST_PORT:-5001}:5001"
+    volumes:
+      - ./config.json:/app/config.json
+    environment:
+      - TZ=Asia/Shanghai
+      - LOG_LEVEL=INFO
+      - DS2API_ADMIN_KEY=${DS2API_ADMIN_KEY:-ds2api}
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true
