@@ -28,4 +28,4 @@ My Docker Compose file
 - [new-api](./docker-compose/new-api/)
 - [open-webui](./docker-compose/open-webui/)
 - [open-webui-fork](./docker-compose/open-webui-fork/)
-- [ds2api](./docker-compose/ds2api/)
+- [deeix-chat](./docker-compose/deeix-chat/)
