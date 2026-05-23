@@ -1,0 +1,21 @@
+services:
+  deeix-chat:
+    image: ghcr.io/deeix-ai/deeix-chat:latest
+    container_name: deeix-chat
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/storage
+      - ./config.yaml:/app/config.yaml:ro
+    environment:
+      - 'TZ=Asia/Shanghai'
+      - 'POSTGRES_DSN=postgresql://user:password@host:port/dbname'
+      - 'REDIS_ADDR=redis:6379'
+      # - 'REDIS_PASSWORD=password'
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true
