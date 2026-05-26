@@ -1,0 +1,56 @@
+app:
+  name: DEEIX Chat
+  env: prod
+
+server:
+  http_port: "8080"
+  cors_allow_origin: "http://localhost:8080,http://127.0.0.1:8080"
+  trusted_proxies: "127.0.0.1/32,::1/128"
+  public_api_base_url: "http://localhost:8080"
+  public_web_base_url: "http://localhost:8080"
+  frontend_dist_dir: "/app/frontend/out"
+  read_header_timeout_seconds: 10
+  read_timeout_seconds: 120
+  idle_timeout_seconds: 120
+  max_header_bytes: 1048576
+
+security:
+  jwt_secret: "aum9gd3k4ep6mwv6r8751tr7277psv2cjbxjcdo1n9rdbx054m71baw0dicq6j9p"
+  data_encryption_key: "zp013tr6jbeelajbrs52npednbwa43az0u7ru9z5xph7s7jkui8toxz3dcmzchxt"
+  ssrf_protection_enabled: false
+  turnstile_siteverify_url: "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+
+database:
+  postgres:
+    dsn: "postgresql://user:password@host:port/dbname"
+    max_open_conns: 30
+    max_idle_conns: 10
+    conn_max_lifetime_minutes: 60
+    conn_max_idle_time_minutes: 10
+  redis:
+    addr: "redis:6379"
+    password: ""
+    db: 0
+
+storage:
+  backend: local
+  local:
+    root_dir: /app/storage
+  s3:
+    endpoint: ""
+    region: auto
+    bucket: ""
+    prefix: ""
+    access_key_id: ""
+    secret_access_key: ""
+    force_path_style: true
+
+geoip:
+  provider: ipwhois
+
+observability:
+  tracing:
+    endpoint: ""
+    headers: ""
+    insecure: false
+    sampling_rate: 1
