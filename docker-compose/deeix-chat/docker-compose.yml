@@ -6,13 +6,15 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./data:/app/storage
+      - ./storage:/app/storage
+      - ./data:/app/data
       - ./config.yaml:/app/config.yaml:ro
     environment:
       - 'TZ=Asia/Shanghai'
       - 'POSTGRES_DSN=postgresql://user:password@host:port/dbname'
       - 'REDIS_ADDR=redis:6379'
-      # - 'REDIS_PASSWORD=password'
+      # - 'REDIS_USERNAME='
+      # - 'REDIS_PASSWORD='
     networks:
       - qingchun-network
 

@@ -1,6 +1,6 @@
 app:
   name: DEEIX Chat
-  env: prod
+  env: dev
 
 server:
   http_port: "8080"
@@ -21,6 +21,7 @@ security:
   turnstile_siteverify_url: "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 
 database:
+  driver: postgres
   postgres:
     dsn: "postgresql://user:password@host:port/dbname"
     max_open_conns: 30
@@ -29,8 +30,12 @@ database:
     conn_max_idle_time_minutes: 10
   redis:
     addr: "redis:6379"
+    username: ""
     password: ""
     db: 0
+
+cache:
+  driver: redis
 
 storage:
   backend: local
