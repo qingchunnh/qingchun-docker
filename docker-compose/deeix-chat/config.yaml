@@ -33,6 +33,8 @@ database:
     username: ""
     password: ""
     db: 0
+    tls_enabled: false
+    tls_insecure_skip_verify: false
 
 cache:
   driver: redis
