@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   new-api:
-    image: ghcr.io/qingchunnh/new-api:v0.12.6
+    image: ghcr.io/qingchunnh/new-api:v0.13.2
     container_name: new-api
     restart: unless-stopped
     command: --log-dir /app/logs
@@ -12,10 +12,10 @@ services:
       - ./data:/data
       - ./logs:/app/logs
     environment:
-      - TZ=Asia/Shanghai
-      # - PORT=3000
+      - 'TZ=Asia/Shanghai'
+      # - 'PORT=3000'
       # - 'SQL_DSN=postgresql://user:password@host:port/dbname' # 数据库地址,如果是docker部署的数据库,地址应该为容器地址。不填写使用默认的sqlite
-      # - REDIS_CONN_STRING=redis://:password@host:6379/0 # Redis地址
+      # - 'REDIS_CONN_STRING=redis://:password@host:6379/0' # Redis地址
     networks:
       - qingchun-network
 
