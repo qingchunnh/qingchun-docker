@@ -1,6 +1,6 @@
 services:
   deeix-chat:
-    image: ghcr.io/deeix-ai/deeix-chat:latest
+    image: ghcr.io/deeix-ai/deeix-chat:dev
     container_name: deeix-chat
     restart: unless-stopped
     ports:
