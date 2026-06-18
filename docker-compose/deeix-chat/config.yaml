@@ -15,8 +15,8 @@ server:
   max_header_bytes: 1048576
 
 security:
-  jwt_secret: "aum9gd3k4ep6mwv6r8751tr7277psv2cjbxjcdo1n9rdbx054m71baw0dicq6j9p"
-  data_encryption_key: "zp013tr6jbeelajbrs52npednbwa43az0u7ru9z5xph7s7jkui8toxz3dcmzchxt"
+  jwt_secret: "TD3NTR9qRs5LDeLkTry99anFjNsFdfeU5NCUbeL5tpqn9QnpwLcorL6D8qfN7Iay" # 64位字符
+  data_encryption_key: "n7XZ6b38iK5NsfsTob2wmqnADgnjYjnvZwgTochxF2Z7QkF7nRIFdt5M9McTEegK" # 64位字符
   ssrf_protection_enabled: false
   turnstile_siteverify_url: "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 
