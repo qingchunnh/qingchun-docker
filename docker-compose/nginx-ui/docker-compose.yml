@@ -9,7 +9,8 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - '/mnt/user/appdata/nginx:/etc/nginx'
-      - '/mnt/user/appdata/nginx-ui:/etc/nginx-ui'
+      - './data/nginx:/etc/nginx'
+      - './data/nginx-ui:/etc/nginx-ui'
+      - './logs:/var/log/nginx'
       - '/var/www:/var/www'
       - '/var/run/docker.sock:/var/run/docker.sock'
