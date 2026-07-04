@@ -26,6 +26,7 @@
 
 **AI**
 - [new-api](./docker-compose/new-api/)
+- [new-api-1.0](./docker-compose/new-api-1.0/)
 - [open-webui](./docker-compose/open-webui/)
 - [open-webui-fork](./docker-compose/open-webui-fork/)
 - [deeix-chat](./docker-compose/deeix-chat/)
