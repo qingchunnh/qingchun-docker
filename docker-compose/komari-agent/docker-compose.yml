@@ -1,0 +1,14 @@
+services:
+  komari-agent:
+    image: ghcr.io/komari-monitor/komari-agent:latest
+    container_name: komari-agent
+    restart: always
+    command: -e 面板地址 -t token --disable-web-ssh --disable-auto-update --memory-include-cache --ignore-unsafe-cert
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - qingchun-network
+
+networks:
+  qingchun-network:
+    external: true
