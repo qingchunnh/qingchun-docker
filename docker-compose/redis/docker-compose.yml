@@ -5,7 +5,7 @@ services:
     restart: always
     command: redis-server /etc/redis/redis.conf # --requirepass password
     ports:
-      - 6379:6379
+      - "127.0.0.1:6379:6379"
     environment:
       - TZ=Asia/Shanghai
     volumes:
