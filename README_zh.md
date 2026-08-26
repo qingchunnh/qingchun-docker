@@ -10,10 +10,12 @@
 **监控**
 - [beszel](./docker-compose/beszel/)
 - [uptime-kuma](./docker-compose/uptime-kuma/)
+- [komari](./docker-compose/komari/)
 
 **数据库**
 - [pgadmin4](./docker-compose/pgadmin4/)
 - [postgresql](./docker-compose/postgresql/)
+- [pgvector](./docker-compose/pgvector/)
 - [redis](./docker-compose/redis/)
 
 **Git**
