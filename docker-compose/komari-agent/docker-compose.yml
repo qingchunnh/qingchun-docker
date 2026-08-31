@@ -2,7 +2,7 @@ services:
   komari-agent:
     image: ghcr.io/komari-monitor/komari-agent:latest
     container_name: komari-agent
-    restart: always
+    restart: unless-stopped
     network_mode: host
     command: -e 面板地址 -t token --disable-web-ssh --disable-auto-update --ignore-unsafe-cert --include-mountpoint /
     volumes:
