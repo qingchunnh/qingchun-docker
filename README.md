@@ -11,6 +11,7 @@ My Docker Compose file
 - [beszel](./docker-compose/beszel/)
 - [uptime-kuma](./docker-compose/uptime-kuma/)
 - [komari](./docker-compose/komari/)
+- [komari-agent](./docker-compose/komari-agent/)
 
 **Database**
 - [pgadmin4](./docker-compose/pgadmin4/)
@@ -25,6 +26,9 @@ My Docker Compose file
 **Storage**
 - [openlist](./docker-compose/openlist/)
 - [cloudreve](./docker-compose/cloudreve/)
+
+**Notes**
+- [memos](./docker-compose/memos)
 
 **AI**
 - [new-api](./docker-compose/new-api/)

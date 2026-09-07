@@ -11,6 +11,7 @@
 - [beszel](./docker-compose/beszel/)
 - [uptime-kuma](./docker-compose/uptime-kuma/)
 - [komari](./docker-compose/komari/)
+- [komari-agent](./docker-compose/komari-agent/)
 
 **数据库**
 - [pgadmin4](./docker-compose/pgadmin4/)
@@ -25,6 +26,9 @@
 **存储**
 - [openlist](./docker-compose/openlist/)
 - [cloudreve](./docker-compose/cloudreve/)
+
+**笔记**
+- [memos](./docker-compose/memos)
 
 **AI**
 - [new-api](./docker-compose/new-api/)
