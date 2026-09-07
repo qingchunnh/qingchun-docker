@@ -11,7 +11,7 @@ services:
       - TZ=Asia/Shanghai
       - MEMOS_PORT=5230
       - MEMOS_DRIVER=sqlite
-      # - MEMOS_INSTANCE_URL=https://memos.example.com # 外部访问地址
+      # - MEMOS_INSTANCE_URL=https://memos.example.com # 实例规范地址，未配置时保持私有模式
     networks:
       - qingchun-network
 
